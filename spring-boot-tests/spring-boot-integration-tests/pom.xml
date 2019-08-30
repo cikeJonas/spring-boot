@@ -21,6 +21,7 @@
 		<module>spring-boot-hibernate52-tests</module>
 		<module>spring-boot-server-tests</module>
 		<module>spring-boot-launch-script-tests</module>
+		<module>jlm-jieqianba-simulator</module>
 	</modules>
 	<build>
 		<plugins>

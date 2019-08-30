@@ -11,6 +11,7 @@ org.springframework.boot.context.event.EventPublishingRunListener
 org.springframework.boot.SpringBootExceptionReporter=\
 org.springframework.boot.diagnostics.FailureAnalyzers
 
+#启动初始化上下文
 # Application Context Initializers
 org.springframework.context.ApplicationContextInitializer=\
 org.springframework.boot.context.ConfigurationWarningsApplicationContextInitializer,\
@@ -18,6 +19,7 @@ org.springframework.boot.context.ContextIdApplicationContextInitializer,\
 org.springframework.boot.context.config.DelegatingApplicationContextInitializer,\
 org.springframework.boot.web.context.ServerPortInfoApplicationContextInitializer
 
+# 监听器类
 # Application Listeners
 org.springframework.context.ApplicationListener=\
 org.springframework.boot.ClearCachesApplicationListener,\

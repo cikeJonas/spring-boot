@@ -209,6 +209,9 @@ public class SpringApplication {
 
 	private Banner banner;
 
+	/**
+	 * 资源加载器
+	 */
 	private ResourceLoader resourceLoader;
 
 	private BeanNameGenerator beanNameGenerator;
@@ -217,6 +220,10 @@ public class SpringApplication {
 
 	private Class<? extends ConfigurableApplicationContext> applicationContextClass;
 
+	/**
+	 * web 应用类型
+	 *
+	 */
 	private WebApplicationType webApplicationType;
 
 	private boolean headless = true;
@@ -264,9 +271,12 @@ public class SpringApplication {
 		this.resourceLoader = resourceLoader;
 		Assert.notNull(primarySources, "PrimarySources must not be null");
 		this.primarySources = new LinkedHashSet<>(Arrays.asList(primarySources));
+		//应用类型
 		this.webApplicationType = WebApplicationType.deduceFromClasspath();
+		//初始化工厂类，从META-INF中的factories文件读取
 		setInitializers((Collection) getSpringFactoriesInstances(
 				ApplicationContextInitializer.class));
+		//设置监听类，
 		setListeners((Collection) getSpringFactoriesInstances(ApplicationListener.class));
 		this.mainApplicationClass = deduceMainApplicationClass();
 	}
